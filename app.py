@@ -9,7 +9,7 @@ from src.repositories.movie_repository import movie_repository_singleton
 load_dotenv()
 
 app = Flask(__name__)
-
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 db.init_app(app)
 
